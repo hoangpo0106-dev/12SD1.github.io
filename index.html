@@ -129,40 +129,42 @@ h3{margin-top:12px}
     <img src="https://i.pinimg.com/736x/20/c5/08/20c508cc4173e9e179d99d15b4ba74ed.jpg"><h3>Trương Tuyền</h3>
   </div>
 </div>
-
+  
+  <!-- Bài học -->
 <h2 class="reveal delay-1">📘 BÀI HỌC - THUYẾT TRÌNH 📘</h2>
 <div class="lessons">
-  <a class="card lesson8 reveal delay-1" href="#">BÀI 8</a>
-  <a class="card lesson9 reveal delay-2" href="#">BÀI 9</a>
-  <a class="card lesson10 reveal delay-3" href="#">BÀI 10</a>
-  <a class="card lesson11 reveal delay-4" href="#">BÀI 11</a>
-  <a class="card lesson12 reveal delay-5" href="#">BÀI 12</a>
-  <a class="card lesson13 reveal delay-1" href="#">BÀI 13</a>
-  <a class="card lesson14 reveal delay-2" href="#">BÀI 14</a>
-  <a class="card lesson15 reveal delay-3" href="#">BÀI 15</a>
-  <a class="card lesson16 reveal delay-4" href="#">BÀI 16</a>
-  <a class="card lesson17 reveal delay-5" href="#">BÀI 17</a>
-  <a class="card lesson18 reveal delay-1" href="#">BÀI 18</a>
+   <a href="https://www.canva.com/design/DAG5cebWjFs/LQswfeiJDwunqhQ9QJ5Qyw/edit" class="card lesson8 reveal delay-1"><h3>BÀI 8</h3></a>
+   <a href="https://www.canva.com/design/DAG5cZmBvmI/OFyI5eGZCtFHxFp3Jqw4xg/edit" class="card lesson9 reveal delay-2"><h3>BÀI 9</h3></a>
+   <a href="https://www.canva.com/design/DAG5cf81ow0/wCCREo-BdxjqWG95TBGbMQ/edit" class="card lesson10 reveal delay-3"><h3>BÀI 10</h3></a>
+   <a href="https://www.canva.com/design/DAG5m2e4LyA/EZC9CsAmsGmpxTE2WjEGnA/edit" class="card lesson11 reveal delay-4"><h3>BÀI 11</h3></a>
+   <a href="https://www.canva.com/design/DAG5m7nAY4s/-acLMYHoV6GC2tvQ6cfVYA/edit" class="card lesson12 reveal delay-5"><h3>BÀI 12</h3></a>
+</div>
 </div>
 
-<footer class="footer-news reveal delay-1">
-  <div class="footer-container">
-    <div>📌 NHÓM 1 – 12SĐ</div>
-    <div>📍 THPT CHUYÊN BẾN TRE</div>
-  </div>
-  <div class="footer-bottom">© 2025 Nhóm 1 – 12SĐ</div>
+<div class="footer-section"><h4>📞 THÔNG TIN LIÊN HỆ</h4><p>Email: <a href="MAIL:nhom1.12sd@gmail.com">nhom1.12sd@gmail.com</a></p><p>Điện thoại: 0211121530</p><p>Facebook: <a href="#">facebook.com/nhom1.12sd</a></p></div>
+        <div class="footer-section"><h4>📍 ĐỊA CHỈ</h4><p>TRƯỜNG THPT CHUYÊN BẾN TRE</p><p>Lớp 12SỬ_ĐỊA – K33</p></div>
+    </div>
+    <div class="footer-bottom">© 2025 Nhóm 1 – 12SĐ | CẢM ƠN BẠN ĐÃ GHÉ QUA💖</div>
 </footer>
 
 <script>
-const reveals=document.querySelectorAll(".reveal");
-const obs=new IntersectionObserver(e=>{
-  e.forEach(i=>{
-    if(i.isIntersecting){i.target.classList.add("show");obs.unobserve(i.target)}
-  })
-},{threshold:.15});
-reveals.forEach(r=>obs.observe(r));
+// Reveal on scroll
+const reveals = document.querySelectorAll(".reveal");
+const observerOptions = {threshold:0.15};
+const revealOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+    });
+}, observerOptions);
+reveals.forEach(rvl => revealOnScroll.observe(rvl));
 </script>
 
 </body>
 </html>
+
+</body>
+</html>
+
 
