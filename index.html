@@ -1,203 +1,73 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NHÓM 1 _ 12SĐ</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+.lesson15{background:#e6ffd6}
+.lesson16{background:#fff1c1}
+.lesson17{background:#e0d6ff}
+.lesson18{background:#ffd9c9}
 
-<style>
-/* ========= GLOBAL ========= */
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-body{background: linear-gradient(to bottom,#dfe9f3,#ffffff);overflow-x:hidden;position:relative;}
-a{text-decoration:none;color:inherit;}
-
-/* ========= SPARKLE BACKGROUND ========= */
-.sparkle{
-  position:fixed; top:0; left:0; width:100%; height:100%;
-  pointer-events:none; z-index:0; background:transparent;
-  animation:sparkleAnim 3s linear infinite;
-}
-@keyframes sparkleAnim{
-  0%{background:radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 2px) repeat;}
-  50%{background:radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 2px) repeat;}
-  100%{background:radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 2px) repeat;}
-}
-
-/* ========= REVEAL POP ========= */
-.reveal{opacity:0;transform:translateY(-40px) scale(0.9);filter:blur(6px);transition:all 0.9s ease-out;}
-.reveal.show{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
-.delay-1{transition-delay:0.1s;}
-.delay-2{transition-delay:0.25s;}
-.delay-3{transition-delay:0.4s;}
-.delay-4{transition-delay:0.55s;}
-.delay-5{transition-delay:0.7s;}
-
-/* ========= BANNER ========= */
-.banner{
-  width:100%;height:330px;
-  background-image:url("https://i.pinimg.com/1200x/df/06/1f/df061ffbf30e83b0c13a8cdca9241f5e.jpg");
-  background-size:cover;background-position:center;position:relative;overflow:hidden;
-}
-.banner-title{
-  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  font-family:'Quicksand',sans-serif;font-size:60px;font-weight:700;
-  color:#F37021;background:rgba(255,255,255,0.25);
-  padding:12px 30px;border-radius:10px;backdrop-filter:blur(2px);letter-spacing:3px;
-  animation: neon 2s infinite alternate, bounce 1.2s ease-in-out infinite;
-}
-@keyframes neon{
-  0%{text-shadow:0 0 5px #fff,0 0 10px #f37021,0 0 20px #f37021;}
-  50%{text-shadow:0 0 10px #fff,0 0 20px #ff9933,0 0 30px #f37021;}
-  100%{text-shadow:0 0 5px #fff,0 0 10px #ff6600,0 0 20px #f37021;}
-}
-@keyframes bounce{
-  0%,100%{transform:translate(-50%,-50%) translateY(0);}
-  50%{transform:translate(-50%,-50%) translateY(-10px);}
-}
-
-/* ========= SECTION TITLES ========= */
-h2{text-align:center;margin:40px 0 10px;font-size:28px;color:#333;}
-
-/* ========= CARDS ========= */
-.members,.lessons{display:flex;justify-content:center;flex-wrap:wrap;gap:25px;padding:20px 40px;z-index:1;position:relative;}
-
-.card{
-  width:200px;background:white;border-radius:15px;padding:15px;text-align:center;cursor:pointer;
-  color:black;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:0.35s ease-in-out;position:relative;overflow:hidden;
-}
-.card::before{
-  content:"";position:absolute;top:0;left:-120%;width:100%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);transition:0.6s;
-}
-.card:hover::before{left:120%;}
-.card img{width:100%;border-radius:12px;}
-h3{margin-top:12px;font-weight:600;}
-
-/* ========= MEMBER COLORS ========= */
-.card.yen{background:#baf3d6;}       
-.card.uyen{background:#ffc0dd;}     
-.card.vy{background:#e6ccff;}       
-.card.hien{background:#fff3b3;}     
-.card.tuyen{background:#333;}        
-.card.tuyen h3{color:#fff;}         
-
-/* ========= MEMBER HOVER GLOW ========= */
-.card.yen:hover{box-shadow:0 0 18px #a8ffe5,0 0 35px #71f7cc,0 0 50px #3beab1;border-color:#3beab1;}
-.card.uyen:hover{box-shadow:0 0 18px #ff9ad2,0 0 35px #ff77c3;border-color:#ff5db6;}
-.card.vy:hover{box-shadow:0 0 18px #c8a4ff,0 0 35px #b488ff;border-color:#a169ff;}
-.card.hien:hover{box-shadow:0 0 18px #ffe58a,0 0 35px #ffd55e;border-color:#ffcc44;}
-.card.tuyen:hover{box-shadow:0 0 18px #333,0 0 35px #111;border-color:#000;}
-
-/* ========= LESSON CARD COLORS ========= */
-.card.lesson8{background:#cce8ff;}
-.card.lesson9{background:#f6c5ff;}
-.card.lesson10{background:#ffe0b3;}
-.card.lesson11{background:#c3ffe3;}
-.card.lesson12{background:#ffb6c1;}
-
-.card.lesson8:hover{box-shadow:0 0 18px #76baff,0 0 35px #4da8ff;border-color:#2b98ff;}
-.card.lesson9:hover{box-shadow:0 0 18px #b38dff,0 0 35px #a06bff;border-color:#8a4cff;}
-.card.lesson10:hover{box-shadow:0 0 18px #ffb066,0 0 35px #ff9a3c;border-color:#ff861f;}
-.card.lesson11:hover{box-shadow:0 0 18px #8dffd8,0 0 35px #63f7bd;border-color:#3feaaa;}
-.card.lesson12:hover{box-shadow:0 0 18px #ff7fab,0 0 35px #ff5c92;border-color:#ff3370;}
-
-/* ========= FEEDBACK FORM ========= */
-form.card input, form.card textarea{border:none;border-radius:8px;padding:10px;margin:6px 0;width:100%;resize:none;}
-form.card{max-width:400px;width:100%;background:linear-gradient(135deg,#baf3d6,#3beab1);color:#fff;}
-form.card button{
-  width:100%;padding:12px;margin-top:10px;border:none;border-radius:10px;
-  background:#fff;color:#3beab1;font-weight:700;cursor:pointer;
-  box-shadow:0 0 10px #3beab1,0 0 20px #71f7cc;
-  transition:0.4s;
-}
-form.card button:hover{box-shadow:0 0 20px #3beab1,0 0 40px #71f7cc;}
-
-/* ========= FOOTER ========= */
-.footer-news{background:#eef4fa;padding:40px 20px 20px;margin-top:40px;font-size:15px;border-top:3px solid #cdd9e5;}
-.footer-container{display:flex;flex-wrap:wrap;justify-content:space-between;max-width:1100px;margin:auto;gap:30px;}
-.footer-section h4{margin-bottom:10px;border-left:4px solid #7bb6e6;padding-left:8px;color:#2a4f6e;}
-.footer-section a{color:#4a89c7;}
-.footer-bottom{text-align:center;margin-top:25px;padding-top:15px;border-top:1px solid #cfd8e1;color:#555;}
+/* Footer */
+.footer-news{background:#eef4fa;padding:40px 20px;margin-top:40px}
+.footer-container{display:flex;justify-content:space-between;flex-wrap:wrap;max-width:1100px;margin:auto}
+.footer-bottom{text-align:center;margin-top:20px;color:#555}
 </style>
 </head>
+
 <body>
 
 <div class="sparkle"></div>
 
-<!-- Banner -->
 <div class="banner reveal delay-1">
-    <div class="banner-title">GROUP 1 - 12 SU DIA</div>
+  <div class="banner-title">GROUP 1 - 12 SỬ ĐỊA</div>
 </div>
 
-<!-- Thành viên -->
 <h2 class="reveal delay-1">🌷 GIỚI THIỆU THÀNH VIÊN 🌷</h2>
 <div class="members">
-    <div class="card yen reveal delay-1" onclick="location.href='thanhvien1.html'">
-        <img src="https://i.pinimg.com/736x/c7/43/32/c74332423bcee5a6852f3f2a2cb42996.jpg"><h3>Xuân Yến</h3>
-    </div>
-    <div class="card uyen reveal delay-2" onclick="location.href='thanhvien2.html'">
-        <img src="https://i.pinimg.com/1200x/0f/bc/e2/0fbce2014ddf9be84f3ad95a92782053.jpg"><h3>Mỹ Uyên</h3>
-    </div>
-    <div class="card vy reveal delay-3" onclick="location.href='thanhvien3.html'">
-        <img src="https://i.pinimg.com/736x/8e/40/2e/8e402e57d2ec2928a4a81d196db2c9ec.jpg"><h3>Tường Vy</h3>
-    </div>
-    <div class="card hien reveal delay-4" onclick="location.href='thanhvien4.html'">
-        <img src="https://i.pinimg.com/736x/83/50/f1/8350f1faff5c435230f7b3c951322267.jpg"><h3>Thảo Hiền</h3>
-    </div>
-    <div class="card tuyen reveal delay-5" onclick="location.href='thanhvien5.html'">
-        <img src="https://i.pinimg.com/736x/20/c5/08/20c508cc4173e9e179d99d15b4ba74ed.jpg"><h3>Trương Tuyền</h3>
-    </div>
+  <div class="card yen reveal delay-1" onclick="location.href='thanhvien1.html'">
+    <img src="https://i.pinimg.com/736x/c7/43/32/c74332423bcee5a6852f3f2a2cb42996.jpg"><h3>Xuân Yến</h3>
+  </div>
+  <div class="card uyen reveal delay-2" onclick="location.href='thanhvien2.html'">
+    <img src="https://i.pinimg.com/1200x/0f/bc/e2/0fbce2014ddf9be84f3ad95a92782053.jpg"><h3>Mỹ Uyên</h3>
+  </div>
+  <div class="card vy reveal delay-3" onclick="location.href='thanhvien3.html'">
+    <img src="https://i.pinimg.com/736x/8e/40/2e/8e402e57d2ec2928a4a81d196db2c9ec.jpg"><h3>Tường Vy</h3>
+  </div>
+  <div class="card hien reveal delay-4" onclick="location.href='thanhvien4.html'">
+    <img src="https://i.pinimg.com/736x/83/50/f1/8350f1faff5c435230f7b3c951322267.jpg"><h3>Thảo Hiền</h3>
+  </div>
+  <div class="card tuyen reveal delay-5" onclick="location.href='thanhvien5.html'">
+    <img src="https://i.pinimg.com/736x/20/c5/08/20c508cc4173e9e179d99d15b4ba74ed.jpg"><h3>Trương Tuyền</h3>
+  </div>
 </div>
 
-<!-- Bài học -->
 <h2 class="reveal delay-1">📘 BÀI HỌC - THUYẾT TRÌNH 📘</h2>
 <div class="lessons">
-   <a href="https://www.canva.com/design/DAG5cebWjFs/LQswfeiJDwunqhQ9QJ5Qyw/edit" class="card lesson8 reveal delay-1"><h3>BÀI 8</h3></a>
-   <a href="https://www.canva.com/design/DAG5cZmBvmI/OFyI5eGZCtFHxFp3Jqw4xg/edit" class="card lesson9 reveal delay-2"><h3>BÀI 9</h3></a>
-   <a href="https://www.canva.com/design/DAG5cf81ow0/wCCREo-BdxjqWG95TBGbMQ/edit" class="card lesson10 reveal delay-3"><h3>BÀI 10</h3></a>
-   <a href="https://www.canva.com/design/DAG5m2e4LyA/EZC9CsAmsGmpxTE2WjEGnA/edit" class="card lesson11 reveal delay-4"><h3>BÀI 11</h3></a>
-   <a href="https://www.canva.com/design/DAG5m7nAY4s/-acLMYHoV6GC2tvQ6cfVYA/edit" class="card lesson12 reveal delay-5"><h3>BÀI 12</h3></a>
+  <a class="card lesson8 reveal delay-1" href="#">BÀI 8</a>
+  <a class="card lesson9 reveal delay-2" href="#">BÀI 9</a>
+  <a class="card lesson10 reveal delay-3" href="#">BÀI 10</a>
+  <a class="card lesson11 reveal delay-4" href="#">BÀI 11</a>
+  <a class="card lesson12 reveal delay-5" href="#">BÀI 12</a>
+  <a class="card lesson13 reveal delay-1" href="#">BÀI 13</a>
+  <a class="card lesson14 reveal delay-2" href="#">BÀI 14</a>
+  <a class="card lesson15 reveal delay-3" href="#">BÀI 15</a>
+  <a class="card lesson16 reveal delay-4" href="#">BÀI 16</a>
+  <a class="card lesson17 reveal delay-5" href="#">BÀI 17</a>
+  <a class="card lesson18 reveal delay-1" href="#">BÀI 18</a>
 </div>
 
-<!-- Form feedback -->
-<h2 class="reveal delay-1">📝 GỬI PHẢN HỒI 📝</h2>
-<div class="members" style="justify-content:center;">
-  <form class="card reveal delay-2">
-    <label>Họ tên:</label>
-    <input type="text" placeholder="Nhập họ tên" required>
-   
-    <label>Số điện thoại:</label>
-    <input type="tel" placeholder="Nhập số điện thoại" required>
-    
-    <label>Phản hồi:</label>
-    <textarea placeholder="Nhập phản hồi" rows="3"></textarea>
-    
-    <button type="submit">Gửi phản hồi</button>
-  </form>
-</div>
-
-<!-- Footer -->
 <footer class="footer-news reveal delay-1">
-    <div class="footer-container">
-        <div class="footer-section"><h4>📌 NHÓM 1 – LỚP 12SĐ</h4><p>Website học tập – thuyết trình của nhóm.</p></div>
-        <div class="footer-section"><h4>📞 THÔNG TIN LIÊN HỆ</h4><p>Email: <a href="MAIL:nhom1.12sd@gmail.com">nhom1.12sd@gmail.com</a></p><p>Điện thoại: 0211121530</p><p>Facebook: <a href="#">facebook.com/nhom1.12sd</a></p></div>
-        <div class="footer-section"><h4>📍 ĐỊA CHỈ</h4><p>TRƯỜNG THPT CHUYÊN BẾN TRE</p><p>Lớp 12SỬ_ĐỊA – K33</p></div>
-    </div>
-    <div class="footer-bottom">© 2025 Nhóm 1 – 12SĐ | CẢM ƠN BẠN ĐÃ GHÉ QUA💖</div>
+  <div class="footer-container">
+    <div>📌 NHÓM 1 – 12SĐ</div>
+    <div>📍 THPT CHUYÊN BẾN TRE</div>
+  </div>
+  <div class="footer-bottom">© 2025 Nhóm 1 – 12SĐ</div>
 </footer>
 
 <script>
-// Reveal on scroll
-const reveals = document.querySelectorAll(".reveal");
-const observerOptions = {threshold:0.15};
-const revealOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-    });
-}, observerOptions);
-reveals.forEach(rvl => revealOnScroll.observe(rvl));
+const reveals=document.querySelectorAll(".reveal");
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>{
+    if(i.isIntersecting){i.target.classList.add("show");obs.unobserve(i.target)}
+  })
+},{threshold:.15});
+reveals.forEach(r=>obs.observe(r));
 </script>
 
 </body>
