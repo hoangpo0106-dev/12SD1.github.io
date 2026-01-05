@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHÓM 1 _ 12SĐ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+body{background:linear-gradient(to bottom,#dfe9f3,#ffffff);overflow-x:hidden;}
+a{text-decoration:none;color:inherit}
+
+/* Sparkle */
+.sparkle{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+  animation:sparkleAnim 3s linear infinite;
+}
+@keyframes sparkleAnim{
+  0%,100%{background:radial-gradient(circle,rgba(255,255,255,.15) 1px,transparent 2px) repeat}
+  50%{background:radial-gradient(circle,rgba(255,255,255,.08) 1px,transparent 2px) repeat}
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(-40px) scale(.9);filter:blur(6px);transition:.9s}
+.reveal.show{opacity:1;transform:none;filter:none}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.25s}
+.delay-3{transition-delay:.4s}
+.delay-4{transition-delay:.55s}
+.delay-5{transition-delay:.7s}
+
+/* Banner */
+.banner{
+  height:330px;
+  background:url("https://i.pinimg.com/1200x/df/06/1f/df061ffbf30e83b0c13a8cdca9241f5e.jpg") center/cover;
+  position:relative;
+}
+.banner-title{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Quicksand',sans-serif;font-size:60px;font-weight:700;
+  color:#F37021;background:rgba(255,255,255,.25);
+  padding:12px 30px;border-radius:10px;letter-spacing:3px;
+  animation:neon 2s infinite alternate,bounce 1.2s infinite;
+}
+@keyframes neon{
+  from{text-shadow:0 0 5px #fff,0 0 15px #f37021}
+  to{text-shadow:0 0 10px #fff,0 0 30px #f37021}
+}
+@keyframes bounce{
+  0%,100%{transform:translate(-50%,-50%)}
+  50%{transform:translate(-50%,-60%)}
+}
+
+h2{text-align:center;margin:40px 0 10px;font-size:28px;color:#333}
+
+/* Cards */
+.members,.lessons{
+  display:flex;justify-content:center;flex-wrap:wrap;
+  gap:25px;padding:20px 40px;z-index:1;position:relative;
+}
+.card{
+  width:200px;border-radius:15px;padding:15px;text-align:center;
+  cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);
+  transition:.35s;position:relative;overflow:hidden;
+}
+.card::before{
+  content:"";position:absolute;top:0;left:-120%;
+  width:100%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+  transition:.6s;
+}
+.card:hover::before{left:120%}
+.card img{width:100%;border-radius:12px}
+h3{margin-top:12px}
+
+/* Member colors */
+.card.yen{background:#baf3d6}
+.card.uyen{background:#ffc0dd}
+.card.vy{background:#e6ccff}
+.card.hien{background:#fff3b3}
+.card.tuyen{background:#333;color:#fff}
+
+/* Lesson colors 8–18 */
+.lesson8{background:#cce8ff}
+.lesson9{background:#f6c5ff}
+.lesson10{background:#ffe0b3}
+.lesson11{background:#c3ffe3}
+.lesson12{background:#ffb6c1}
+.lesson13{background:#d6f5ff}
+.lesson14{background:#ffd6e8}
 .lesson15{background:#e6ffd6}
 .lesson16{background:#fff1c1}
 .lesson17{background:#e0d6ff}
@@ -72,3 +165,4 @@ reveals.forEach(r=>obs.observe(r));
 
 </body>
 </html>
+
